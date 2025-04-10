@@ -9,12 +9,16 @@ import './cart.css'
 
 {/*Ha nullára csökken a mennyiség nem kell eltünnie, de 0 alá ne menjen az értéke */}
 
+type Cartprops={
+  
+    onExit:()=>void
+}
 
-const Cart = () => {
+const Cart = (props:Cartprops) => {
   
     return (
     <div className="cart" id="cart">
-    <i className='bx bx-x cart__close' id="cart-close"></i>
+    <i className='bx bx-x cart__close' id="cart-close" onClick={props.onExit}></i>
 
     <h2 className="cart__title-center">My Cart</h2>
 
